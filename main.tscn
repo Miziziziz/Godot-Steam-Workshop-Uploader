@@ -1,0 +1,226 @@
+[gd_scene load_steps=2 format=3 uid="uid://cle3fwd8333xa"]
+
+[ext_resource type="Script" uid="uid://naixhy6tllmq" path="res://main.gd" id="1"]
+
+[node name="Main" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="MarginContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FileDialog" type="FileDialog" parent="MarginContainer"]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+
+[node name="PreviewImageDialog" type="FileDialog" parent="MarginContainer"]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+
+[node name="VBoxContainer" type="Control" parent="MarginContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UploadContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -573.5
+offset_right = 573.5
+offset_bottom = 426.0
+grow_horizontal = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.4
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Upload a mod to the workshop"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FileLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Select mod file"
+editable = false
+
+[node name="SelectModButton" type="Button" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "..."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PreviewLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Select preview image"
+editable = false
+
+[node name="SelectPreviewButton" type="Button" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "..."
+
+[node name="WorkshopIDLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "No workshop ID"
+
+[node name="TagContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TagLabel" type="Label" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/TagContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tags (CTRL + Click to select/deselect)"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/TagContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TagList" type="ItemList" parent="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/TagContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 1
+allow_reselect = true
+allow_rmb_select = true
+auto_height = true
+max_columns = 10
+same_column_width = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/UploadContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="UploadButton" type="Button" parent="MarginContainer/VBoxContainer/UploadContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upload"
+
+[node name="TermsOfServiceLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/UploadContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 63.615)
+layout_mode = 2
+bbcode_enabled = true
+text = "By submitting this item, you agree to the [url]workshop terms of service[/url]
+"
+scroll_active = false
+
+[node name="HBoxContainer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 494.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.2
+
+[node name="Instructions" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 5.0
+offset_right = 655.0
+offset_bottom = 445.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Instructions
+
+1) Select the mod you want to upload (.zip / .pck) (needs to be compatible with [url])ModLoader[/url])
+
+2) Select a preview image if it's the first time uploading the mod or if you want to change it
+
+3) Select tags for your mod if available (leave empty if you don't want to change them)
+
+4) Add the mod's workshop ID if you're updating it, leave empty if it's a new mod
+
+5) Upload it and take note of the workshop ID if it's a new mod. Use it when you want to update it
+
+6) Check and edit your mod in the Steam Workshop, then set it public when it's ready"
+scroll_active = false
+
+[node name="Console" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -834.0
+offset_right = -64.0
+offset_bottom = -71.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Console"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Console/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ConsoleContent" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Console/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+autowrap_mode = 2
+
+[connection signal="file_selected" from="MarginContainer/FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="MarginContainer/PreviewImageDialog" to="." method="_on_PreviewImageDialog_file_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer2/SelectModButton" to="." method="_on_SelectModButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/UploadContainer/HBoxContainer/VBoxContainer/HBoxContainer/SelectPreviewButton" to="." method="_on_SelectPreviewButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/UploadContainer/VBoxContainer2/UploadButton" to="." method="_on_UploadButton_pressed"]
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer/UploadContainer/VBoxContainer2/TermsOfServiceLabel" to="." method="_on_TermsOfServiceLabel_meta_clicked"]
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer/HBoxContainer/Instructions" to="." method="_on_Instructions_meta_clicked"]
