@@ -1,12 +1,9 @@
 # Godot-Steam-Workshop-Uploader
 Standalone Tool for uploading ModLoader mods via the Steam Workshop.
-
 Blobfish's Godot Workshop Utility ported to Godot 4
 (original: https://github.com/Blobfish-Games/godot-workshop-utility )
 
-
-# Godot Workshop Utility
-Small utility used to upload content to Steam Workshop with Godot. It is early in development and will most likely undergo a lot of changes. Made to work with the [Godot-ModLoader](https://github.com/GodotModding/godot-mod-loader). Also make sure to have followed this [Steam Workshop implementation guide](https://partner.steamgames.com/doc/features/workshop/implementation) before adding this utility.
+Made to work with the [Godot-ModLoader](https://github.com/GodotModding/godot-mod-loader). Also make sure to have followed this [Steam Workshop implementation guide](https://partner.steamgames.com/doc/features/workshop/implementation) before adding this utility.
 
 ## How to use
 1. Download the latest release.
